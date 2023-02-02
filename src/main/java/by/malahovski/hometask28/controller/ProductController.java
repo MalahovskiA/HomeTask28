@@ -28,7 +28,7 @@ public class ProductController {
     }
 
     @PutMapping(value = "/add", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity addProduct(@RequestBody Product product) {
+    public ResponseEntity<Boolean> addProduct(@RequestBody Product product) {
         return ResponseEntity.ok(productService.insertEntity(product));
     }
 
@@ -60,7 +60,7 @@ public class ProductController {
     }
 
     @PutMapping(value = "/update/{id}", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity updateProduct(@PathVariable Long id, @RequestBody Product product) {
+    public ResponseEntity<Boolean> updateProduct(@PathVariable Long id, @RequestBody Product product) {
         return ResponseEntity.ok(productService.updateById(id, product));
     }
 

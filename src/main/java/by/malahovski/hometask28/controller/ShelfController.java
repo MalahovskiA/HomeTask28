@@ -27,7 +27,7 @@ public class ShelfController {
     }
 
     @PutMapping(value = "/add", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity addShelf(@RequestBody Shelf shelf) {
+    public ResponseEntity<Boolean> addShelf(@RequestBody Shelf shelf) {
         return ResponseEntity.ok(shelfService.insertEntity(shelf));
     }
 
@@ -59,7 +59,7 @@ public class ShelfController {
     }
 
     @PutMapping(value = "/update/{id}", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity updateShelf(@PathVariable Long id, @RequestBody Shelf shelf) {
+    public ResponseEntity<Boolean> updateShelf(@PathVariable Long id, @RequestBody Shelf shelf) {
         return ResponseEntity.ok(shelfService.updateById(id, shelf));
     }
 

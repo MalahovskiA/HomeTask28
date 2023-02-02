@@ -7,9 +7,11 @@ import java.util.List;
 
 public interface ShopService extends DefaultService<Shop> {
 
-    List<Shop> getStoresByWarehousesAndShelves(Long storageId, Long shelfId);
+    List<Shop> getStoresByWarehousesAndShelves(Long storageId, Integer shelfId);
 
-    Integer getNumberOfRecordsMoreStorageId(Integer storageId);
+    Integer getNumberOfRecordsStorageId(Long storageId);
 
-    List<String> getStoresNameByWarehousesAndShelves(Long storageId, Long shelfId);
+    List<Shop> getAllShops();
+
+    List<Shop> getAlLShopsBySQL();
 }
